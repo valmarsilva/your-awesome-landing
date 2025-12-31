@@ -51,11 +51,11 @@ const Header = () => {
           {/* Phone & CTA */}
           <div className="hidden md:flex items-center gap-4">
             <a
-              href="tel:+5547999999999"
+              href="tel:+5547988136429"
               className="flex items-center gap-2 text-sm font-medium text-foreground"
             >
               <Phone className="w-4 h-4 text-primary" />
-              (47) 99999-9999
+              (47) 98813-6429
             </a>
             <Button
               onClick={() => scrollToSection("#contato")}
@@ -89,11 +89,11 @@ const Header = () => {
                 </button>
               ))}
               <a
-                href="tel:+5547999999999"
+                href="tel:+5547988136429"
                 className="flex items-center gap-2 text-sm font-medium text-foreground py-2"
               >
                 <Phone className="w-4 h-4 text-primary" />
-                (47) 99999-9999
+                (47) 98813-6429
               </a>
               <Button
                 onClick={() => scrollToSection("#contato")}
