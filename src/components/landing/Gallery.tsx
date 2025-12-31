@@ -1,23 +1,69 @@
 import { Button } from "@/components/ui/button";
-import { MessageCircle } from "lucide-react";
+import { MessageCircle, ChevronLeft, ChevronRight } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+
+// Import images
+import empilhadeiraManutencao from "@/assets/gallery/empilhadeira-manutencao.jpg";
+import controladorClark from "@/assets/gallery/controlador-clark.jpg";
+import garfosEmpilhadeira from "@/assets/gallery/garfos-empilhadeira.jpg";
+import rodaVermelha from "@/assets/gallery/roda-vermelha.jpg";
+import medicaoRolamento from "@/assets/gallery/medicao-rolamento.jpg";
+import rodaLaranja from "@/assets/gallery/roda-laranja.jpg";
+import mangueiraReparo from "@/assets/gallery/mangueira-reparo.jpg";
+
+// Import videos
+import video1 from "@/assets/videos/video-1.mp4";
+import orbmaqPaisagem from "@/assets/videos/orbmaq-paisagem.mp4";
+import video2 from "@/assets/videos/video-2.mp4";
 
 const galleryItems = [
   {
-    title: "Manutenção Preventiva",
-    description: "Inspeção completa de empilhadeira elétrica",
+    src: empilhadeiraManutencao,
+    title: "Manutenção Completa",
+    description: "Revisão completa de empilhadeira elétrica",
   },
   {
-    title: "Reparo de Motor",
-    description: "Substituição de motor elétrico industrial",
+    src: controladorClark,
+    title: "Controlador ZAPI",
+    description: "Manutenção de controlador eletrônico Clark",
   },
   {
-    title: "Sistema de Baterias",
-    description: "Manutenção de bateria tracionária",
+    src: garfosEmpilhadeira,
+    title: "Troca de Rodas",
+    description: "Substituição de rodas de empilhadeira",
   },
   {
-    title: "Revisão Completa",
-    description: "Entrega de equipamento revisado",
+    src: rodaVermelha,
+    title: "Roda de Poliuretano",
+    description: "Peças de reposição de alta qualidade",
   },
+  {
+    src: medicaoRolamento,
+    title: "Medição de Precisão",
+    description: "Análise técnica de componentes",
+  },
+  {
+    src: rodaLaranja,
+    title: "Roda Industrial",
+    description: "Componentes para paleteiras elétricas",
+  },
+  {
+    src: mangueiraReparo,
+    title: "Reparo Hidráulico",
+    description: "Manutenção de sistema hidráulico",
+  },
+];
+
+const videos = [
+  { src: orbmaqPaisagem, title: "Apresentação ORBMAQ" },
+  { src: video1, title: "Manutenção em Andamento" },
+  { src: video2, title: "Serviço Técnico" },
 ];
 
 const Gallery = () => {
@@ -44,33 +90,65 @@ const Gallery = () => {
           </p>
         </div>
 
-        {/* Gallery Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-          {galleryItems.map((item, index) => (
-            <div
-              key={index}
-              className="group relative aspect-square bg-muted rounded-xl overflow-hidden cursor-pointer"
-            >
-              {/* Placeholder Image */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/40 flex items-center justify-center">
-                <span className="text-primary-foreground/60 text-sm font-medium">
-                  Imagem {index + 1}
-                </span>
-              </div>
+        {/* Image Carousel */}
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          className="w-full max-w-6xl mx-auto"
+        >
+          <CarouselContent className="-ml-2 md:-ml-4">
+            {galleryItems.map((item, index) => (
+              <CarouselItem key={index} className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
+                <div className="group relative aspect-square bg-muted rounded-xl overflow-hidden">
+                  <img
+                    src={item.src}
+                    alt={item.title}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                  {/* Hover Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/90 via-foreground/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 text-primary-foreground">
+                      <h3 className="font-semibold text-lg mb-1">{item.title}</h3>
+                      <p className="text-sm text-primary-foreground/80">{item.description}</p>
+                    </div>
+                  </div>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="hidden md:flex -left-12" />
+          <CarouselNext className="hidden md:flex -right-12" />
+        </Carousel>
 
-              {/* Hover Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-foreground/90 via-foreground/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 text-primary-foreground">
-                  <h3 className="font-semibold text-lg mb-1">{item.title}</h3>
-                  <p className="text-sm text-primary-foreground/80">{item.description}</p>
+        {/* Videos Section */}
+        <div className="mt-16">
+          <h3 className="text-2xl font-bold text-foreground text-center mb-8">
+            Vídeos dos Nossos Serviços
+          </h3>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {videos.map((video, index) => (
+              <div key={index} className="rounded-xl overflow-hidden shadow-card bg-card">
+                <video
+                  src={video.src}
+                  controls
+                  preload="metadata"
+                  className="w-full aspect-video object-cover"
+                  playsInline
+                >
+                  Seu navegador não suporta vídeos.
+                </video>
+                <div className="p-4">
+                  <h4 className="font-medium text-foreground">{video.title}</h4>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-10">
+        <div className="text-center mt-12">
           <Button
             size="lg"
             onClick={openWhatsApp}
