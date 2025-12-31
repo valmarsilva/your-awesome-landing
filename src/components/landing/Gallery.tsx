@@ -112,7 +112,7 @@ const brands = [
 const Gallery = () => {
   const openWhatsApp = () => {
     window.open(
-      "https://wa.me/5547999999999?text=Olá! Vi a galeria de trabalhos e gostaria de solicitar um orçamento.",
+      "https://wa.me/5547988136429?text=Olá! Vi a galeria de trabalhos e gostaria de solicitar um orçamento.",
       "_blank"
     );
   };

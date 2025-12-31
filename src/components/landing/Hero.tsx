@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 const Hero = () => {
   const openWhatsApp = () => {
     window.open(
-      "https://wa.me/5547999999999?text=Olá! Gostaria de solicitar um orçamento para manutenção.",
+      "https://wa.me/5547988136429?text=Olá! Gostaria de solicitar um orçamento para manutenção.",
       "_blank"
     );
   };

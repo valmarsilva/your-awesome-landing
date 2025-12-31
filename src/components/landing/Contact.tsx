@@ -10,8 +10,8 @@ const contactInfo = [
   {
     icon: Phone,
     label: "WhatsApp",
-    value: "(47) 99999-9999",
-    href: "https://wa.me/5547999999999",
+    value: "(47) 98813-6429",
+    href: "https://wa.me/5547988136429",
   },
   {
     icon: Mail,
@@ -48,7 +48,7 @@ const Contact = () => {
     }
 
     const message = `Olá! Meu nome é ${formData.nome}, sou de ${formData.cidade}.%0A%0A${formData.mensagem}`;
-    window.open(`https://wa.me/5547999999999?text=${message}`, "_blank");
+    window.open(`https://wa.me/5547988136429?text=${message}`, "_blank");
 
     toast({
       title: "Redirecionando para WhatsApp",
