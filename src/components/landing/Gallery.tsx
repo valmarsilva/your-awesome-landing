@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { MessageCircle, ChevronLeft, ChevronRight } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 import {
   Carousel,
   CarouselContent,
@@ -16,13 +16,44 @@ import rodaVermelha from "@/assets/gallery/roda-vermelha.jpg";
 import medicaoRolamento from "@/assets/gallery/medicao-rolamento.jpg";
 import rodaLaranja from "@/assets/gallery/roda-laranja.jpg";
 import mangueiraReparo from "@/assets/gallery/mangueira-reparo.jpg";
+import empilhadeiraAzul from "@/assets/gallery/empilhadeira-azul.jpg";
+import empilhadeiraClarkGreen from "@/assets/gallery/empilhadeira-clark.jpg";
+import painelHeli from "@/assets/gallery/painel-heli.jpg";
+import paleteiraLaranja from "@/assets/gallery/paleteira-laranja.jpg";
+import empilhadeiraYale from "@/assets/gallery/empilhadeira-yale.jpg";
 
 // Import videos
 import video1 from "@/assets/videos/video-1.mp4";
 import orbmaqPaisagem from "@/assets/videos/orbmaq-paisagem.mp4";
 import video2 from "@/assets/videos/video-2.mp4";
 
+// Import brand logos
+import logoYale from "@/assets/brands/yale.png";
+import logoHeli from "@/assets/brands/heli.png";
+import logoClark from "@/assets/brands/clark.png";
+import logoDaewoo from "@/assets/brands/daewoo.png";
+
 const galleryItems = [
+  {
+    src: empilhadeiraClarkGreen,
+    title: "Empilhadeira Clark ECX 30",
+    description: "Equipamento em operação após revisão",
+  },
+  {
+    src: empilhadeiraAzul,
+    title: "Empilhadeira Elétrica",
+    description: "Manutenção de equipamento moderno",
+  },
+  {
+    src: empilhadeiraYale,
+    title: "Empilhadeira Yale",
+    description: "Equipamento pronto para entrega",
+  },
+  {
+    src: paleteiraLaranja,
+    title: "Paleteira Elétrica",
+    description: "Manutenção de paleteira industrial",
+  },
   {
     src: empilhadeiraManutencao,
     title: "Manutenção Completa",
@@ -32,6 +63,11 @@ const galleryItems = [
     src: controladorClark,
     title: "Controlador ZAPI",
     description: "Manutenção de controlador eletrônico Clark",
+  },
+  {
+    src: painelHeli,
+    title: "Painel HELI",
+    description: "Diagnóstico de painel de instrumentos",
   },
   {
     src: garfosEmpilhadeira,
@@ -64,6 +100,13 @@ const videos = [
   { src: orbmaqPaisagem, title: "Apresentação ORBMAQ" },
   { src: video1, title: "Manutenção em Andamento" },
   { src: video2, title: "Serviço Técnico" },
+];
+
+const brands = [
+  { src: logoClark, name: "Clark" },
+  { src: logoYale, name: "Yale" },
+  { src: logoHeli, name: "Heli" },
+  { src: logoDaewoo, name: "Daewoo" },
 ];
 
 const Gallery = () => {
@@ -121,6 +164,27 @@ const Gallery = () => {
           <CarouselPrevious className="hidden md:flex -left-12" />
           <CarouselNext className="hidden md:flex -right-12" />
         </Carousel>
+
+        {/* Brands Section */}
+        <div className="mt-16">
+          <h3 className="text-xl font-semibold text-foreground text-center mb-8">
+            Marcas que Atendemos
+          </h3>
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 max-w-4xl mx-auto">
+            {brands.map((brand, index) => (
+              <div
+                key={index}
+                className="grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300"
+              >
+                <img
+                  src={brand.src}
+                  alt={brand.name}
+                  className="h-12 md:h-16 w-auto object-contain"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
 
         {/* Videos Section */}
         <div className="mt-16">
