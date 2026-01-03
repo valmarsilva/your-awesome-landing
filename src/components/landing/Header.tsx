@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logoOrbmaq from "@/assets/logo-orbmaq.png";
 
 const navLinks = [
   { href: "#servicos", label: "Serviços" },
@@ -26,13 +27,20 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <div className="flex flex-col">
-            <span className="text-xl md:text-2xl font-bold text-primary tracking-tight">
-              ORBMAQ
-            </span>
-            <span className="text-[10px] md:text-xs text-muted-foreground -mt-1">
-              Empilhadeiras & Paleteiras
-            </span>
+          <div className="flex items-center gap-3">
+            <img 
+              src={logoOrbmaq} 
+              alt="ORBMAQ Logo" 
+              className="h-10 md:h-14 w-auto object-contain"
+            />
+            <div className="flex flex-col">
+              <span className="text-xl md:text-2xl font-bold text-primary tracking-tight">
+                ORBMAQ
+              </span>
+              <span className="text-[10px] md:text-xs text-muted-foreground -mt-1">
+                Empilhadeiras & Paleteiras
+              </span>
+            </div>
           </div>
 
           {/* Desktop Navigation */}
