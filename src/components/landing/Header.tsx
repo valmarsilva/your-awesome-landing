@@ -31,7 +31,7 @@ const Header = () => {
             <img 
               src={logoOrbmaq} 
               alt="ORBMAQ Logo" 
-              className="h-10 md:h-14 w-auto object-contain rounded-lg"
+              className="h-8 md:h-10 w-auto object-contain rounded-lg"
             />
             <div className="flex flex-col">
               <span className="text-xl md:text-2xl font-bold text-primary tracking-tight">
