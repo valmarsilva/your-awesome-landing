@@ -5,6 +5,7 @@ import Gallery from "@/components/landing/Gallery";
 import ServiceAreas from "@/components/landing/ServiceAreas";
 import About from "@/components/landing/About";
 import Contact from "@/components/landing/Contact";
+import InstallApp from "@/components/landing/InstallApp";
 import WhatsAppButton from "@/components/landing/WhatsAppButton";
 import Footer from "@/components/landing/Footer";
 
@@ -18,6 +19,7 @@ const Index = () => {
       <ServiceAreas />
       <About />
       <Contact />
+      <InstallApp />
       <WhatsAppButton />
       <Footer />
     </main>
