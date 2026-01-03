@@ -26,12 +26,14 @@ import empilhadeiraYale from "@/assets/gallery/empilhadeira-yale.jpg";
 import video1 from "@/assets/videos/video-1.mp4";
 import orbmaqPaisagem from "@/assets/videos/orbmaq-paisagem.mp4";
 import video2 from "@/assets/videos/video-2.mp4";
+import video3 from "@/assets/videos/video-3.mp4";
 
 // Import brand logos
 import logoYale from "@/assets/brands/yale.png";
 import logoHeli from "@/assets/brands/heli.png";
 import logoClark from "@/assets/brands/clark.png";
 import logoDaewoo from "@/assets/brands/daewoo.png";
+import logoOrbmaq from "@/assets/logo-orbmaq.png";
 
 const galleryItems = [
   {
@@ -100,9 +102,11 @@ const videos = [
   { src: orbmaqPaisagem, title: "Apresentação ORBMAQ" },
   { src: video1, title: "Manutenção em Andamento" },
   { src: video2, title: "Serviço Técnico" },
+  { src: video3, title: "Equipe em Ação" },
 ];
 
 const brands = [
+  { src: logoOrbmaq, name: "ORBMAQ", isMain: true },
   { src: logoClark, name: "Clark" },
   { src: logoYale, name: "Yale" },
   { src: logoHeli, name: "Heli" },
@@ -174,12 +178,12 @@ const Gallery = () => {
             {brands.map((brand, index) => (
               <div
                 key={index}
-                className="grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300"
+                className={`${brand.isMain ? '' : 'grayscale hover:grayscale-0 opacity-70'} hover:opacity-100 transition-all duration-300`}
               >
                 <img
                   src={brand.src}
                   alt={brand.name}
-                  className="h-12 md:h-16 w-auto object-contain"
+                  className={`${brand.isMain ? 'h-20 md:h-28' : 'h-12 md:h-16'} w-auto object-contain`}
                 />
               </div>
             ))}
