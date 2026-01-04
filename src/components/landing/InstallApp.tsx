@@ -28,8 +28,8 @@ const InstallApp = () => {
               size={200}
               level="H"
               includeMargin
-              bgColor="#0000CD"
-              fgColor="#ffffff"
+              bgColor="#ffffff"
+              fgColor="#000000"
             />
           </div>
 
