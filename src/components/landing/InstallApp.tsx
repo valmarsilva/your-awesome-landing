@@ -2,7 +2,7 @@ import { QRCodeSVG } from "qrcode.react";
 import { Smartphone, Download } from "lucide-react";
 
 const InstallApp = () => {
-  const appUrl = "https://7c87b3b2-ff9d-4385-a2bf-5c57a1c6a668.lovableproject.com";
+  const appUrl = "ORBMAQ - Eletric Forklifts & Pallets-https://cozy-landing-forge.lovable.app";
 
   return (
     <section id="instalar" className="py-16 bg-muted/50">
