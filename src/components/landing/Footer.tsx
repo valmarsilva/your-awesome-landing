@@ -48,7 +48,7 @@ const Footer = () => {
                 className="flex items-center gap-2 text-sm text-background/70 hover:text-background transition-colors"
               >
                 <Phone className="w-4 h-4" />
-                (47) 99999-9999
+                (47) 98813-6429
               </a>
               <a
                 href="mailto:contato@orbmaq.com.br"
@@ -59,7 +59,7 @@ const Footer = () => {
               </a>
               <div className="flex items-start gap-2 text-sm text-background/70">
                 <MapPin className="w-4 h-4 flex-shrink-0 mt-0.5" />
-                Rua Exemplo, 123 - Itajaí/SC
+                Rua : Doutor Pedro Ferreira, 155, Sala 1402A BOX 102,Centro - Itajaí/SC-CEP:88301-030.
               </div>
             </div>
           </div>
