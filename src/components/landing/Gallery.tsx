@@ -28,12 +28,6 @@ import orbmaqPaisagem from "@/assets/videos/orbmaq-paisagem.mp4";
 import video2 from "@/assets/videos/video-2.mp4";
 import video3 from "@/assets/videos/video-3.mp4";
 
-// Import brand logos
-import logoYale from "@/assets/brands/yale.png";
-import logoHeli from "@/assets/brands/heli.png";
-import logoClark from "@/assets/brands/clark.png";
-import logoDaewoo from "@/assets/brands/daewoo.png";
-import logoOrbmaq from "@/assets/logo-orbmaq.png";
 
 const galleryItems = [
   {
@@ -105,12 +99,18 @@ const videos = [
   { src: video3, title: "Equipe em Ação" },
 ];
 
-const brands = [
-  { src: logoOrbmaq, name: "ORBMAQ", isMain: true },
-  { src: logoClark, name: "Clark" },
-  { src: logoYale, name: "Yale" },
-  { src: logoHeli, name: "Heli" },
-  { src: logoDaewoo, name: "Daewoo" },
+const clients = [
+  "Brother",
+  "Cobasi",
+  "Shopee",
+  "Impomax",
+  "Seatrium",
+  "Meireles",
+  "Branet",
+  "Lucar",
+  "Astra Transformadores",
+  "Mercado Hasi",
+  "Mercado Verde Vale",
 ];
 
 const Gallery = () => {
@@ -169,22 +169,18 @@ const Gallery = () => {
           <CarouselNext className="hidden md:flex -right-12" />
         </Carousel>
 
-        {/* Brands Section */}
+        {/* Clients Section */}
         <div className="mt-16">
           <h3 className="text-xl font-semibold text-foreground text-center mb-8">
-            Marcas que Atendemos
+            Empresas que Confiam em Nossos Serviços
           </h3>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 max-w-4xl mx-auto">
-            {brands.map((brand, index) => (
+          <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6 max-w-4xl mx-auto">
+            {clients.map((client, index) => (
               <div
                 key={index}
-                className={`${brand.isMain ? '' : 'grayscale hover:grayscale-0 opacity-70'} hover:opacity-100 transition-all duration-300`}
+                className="px-6 py-3 bg-card border border-border rounded-lg shadow-sm hover:shadow-md hover:border-primary/50 transition-all duration-300"
               >
-                <img
-                  src={brand.src}
-                  alt={brand.name}
-                  className={`${brand.isMain ? 'h-20 md:h-28' : 'h-12 md:h-16'} w-auto object-contain`}
-                />
+                <span className="font-medium text-foreground">{client}</span>
               </div>
             ))}
           </div>
