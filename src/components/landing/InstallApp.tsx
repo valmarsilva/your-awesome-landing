@@ -2,7 +2,7 @@ import { QRCodeSVG } from "qrcode.react";
 import { Smartphone, Download } from "lucide-react";
 
 const InstallApp = () => {
-  const appUrl = "https://cozy-landing-forge.adorável.app";
+  const appUrl = "https://7c87b3b2-ff9d-4385-a2bf-5c57a1ca668.lovableproject.com";
 
   return (
     <section id="instalar" className="py-16 bg-muted/50">
