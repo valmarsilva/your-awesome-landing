@@ -28,6 +28,9 @@ import orbmaqPaisagem from "@/assets/videos/orbmaq-paisagem.mp4";
 import video2 from "@/assets/videos/video-2.mp4";
 import video3 from "@/assets/videos/video-3.mp4";
 
+// Import logo
+import logoOrbmaq from "@/assets/logo-orbmaq.png";
+
 
 const galleryItems = [
   {
@@ -168,6 +171,22 @@ const Gallery = () => {
           <CarouselPrevious className="hidden md:flex -left-12" />
           <CarouselNext className="hidden md:flex -right-12" />
         </Carousel>
+
+        {/* Team Section */}
+        <div className="mt-16">
+          <h3 className="text-xl font-semibold text-foreground text-center mb-8">
+            Nossa Equipe
+          </h3>
+          <div className="flex justify-center">
+            <div className="bg-card border border-border rounded-xl p-8 shadow-md">
+              <img
+                src={logoOrbmaq}
+                alt="ORBMAQ - Equipe"
+                className="h-32 md:h-40 w-auto object-contain"
+              />
+            </div>
+          </div>
+        </div>
 
         {/* Clients Section */}
         <div className="mt-16">
