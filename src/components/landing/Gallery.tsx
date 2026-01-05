@@ -173,7 +173,7 @@ const Gallery = () => {
         </Carousel>
 
         {/* Team Section */}
-        <div className="mt-16">
+        <div id="equipe" className="mt-16 scroll-mt-24">
           <h3 className="text-xl font-semibold text-foreground text-center mb-8">
             Nossa Equipe
           </h3>

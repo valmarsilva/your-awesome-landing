@@ -6,6 +6,7 @@ import logoOrbmaq from "@/assets/logo-orbmaq.png";
 const navLinks = [
   { href: "#servicos", label: "Serviços" },
   { href: "#galeria", label: "Galeria" },
+  { href: "#equipe", label: "Equipe" },
   { href: "#areas", label: "Áreas de Atendimento" },
   { href: "#sobre", label: "Sobre" },
   { href: "#contato", label: "Contato" },
