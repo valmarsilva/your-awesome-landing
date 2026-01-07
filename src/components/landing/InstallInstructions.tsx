@@ -14,21 +14,32 @@ const isIOS = () => {
   return /iPad|iPhone|iPod/.test(navigator.userAgent);
 };
 
-const InstallInstructions = () => {
+interface InstallInstructionsProps {
+  variant?: "icon" | "button";
+}
+
+const InstallInstructions = ({ variant = "icon" }: InstallInstructionsProps) => {
   const [open, setOpen] = useState(false);
   const ios = isIOS();
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button
-          variant="ghost"
-          size="icon"
-          aria-label="Como instalar o app"
-          className="lg:hidden"
-        >
-          <Download className="w-5 h-5" />
-        </Button>
+        {variant === "button" ? (
+          <Button className="w-full gap-2 bg-gradient-primary">
+            <Download className="w-4 h-4" />
+            Como instalar
+          </Button>
+        ) : (
+          <Button
+            variant="ghost"
+            size="icon"
+            aria-label="Como instalar o app"
+            className="lg:hidden"
+          >
+            <Download className="w-5 h-5" />
+          </Button>
+        )}
       </DialogTrigger>
       <DialogContent className="max-w-sm">
         <DialogHeader>
