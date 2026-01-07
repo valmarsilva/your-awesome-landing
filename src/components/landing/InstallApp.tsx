@@ -28,7 +28,7 @@ const InstallApp = () => {
           {/* QR Code */}
           <div className="bg-white p-6 rounded-2xl shadow-card">
             <img 
-    src="/qrcode png.png" 
+    src="/qr-code png.png" 
     alt="QR Code ORBMAQ"
     className="w-48 h-48 mx-auto"
             />
