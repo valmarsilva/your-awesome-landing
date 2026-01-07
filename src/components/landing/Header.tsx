@@ -3,6 +3,7 @@ import { BadgeCheck, Download, Menu, Phone, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logoOrbmaq from "@/assets/logo-orbmaq.png";
 import { usePwaInstall } from "@/hooks/use-pwa-install";
+import InstallInstructions from "./InstallInstructions";
 
 const navLinks = [
   { href: "#servicos", label: "Serviços" },
@@ -105,20 +106,26 @@ const Header = () => {
 
           {/* Mobile actions */}
           <div className="lg:hidden flex items-center gap-1">
-            {(isInstallable || isInstalled) && (
+            {isInstalled ? (
               <Button
                 variant="ghost"
                 size="icon"
-                onClick={isInstallable ? promptInstall : undefined}
-                disabled={!isInstallable}
-                aria-label={isInstalled ? "App instalado" : "Instalar app"}
+                disabled
+                aria-label="App instalado"
               >
-                {isInstalled ? (
-                  <BadgeCheck className="w-5 h-5" />
-                ) : (
-                  <Download className="w-5 h-5" />
-                )}
+                <BadgeCheck className="w-5 h-5 text-primary" />
               </Button>
+            ) : isInstallable ? (
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={promptInstall}
+                aria-label="Instalar app"
+              >
+                <Download className="w-5 h-5" />
+              </Button>
+            ) : (
+              <InstallInstructions />
             )}
 
             <button
