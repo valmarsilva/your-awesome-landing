@@ -1,8 +1,12 @@
 import { QRCodeSVG } from "qrcode.react";
-import { Smartphone, Download } from "lucide-react";
+import { Smartphone, Download, BadgeCheck } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { usePwaInstall } from "@/hooks/use-pwa-install";
+import InstallInstructions from "./InstallInstructions";
 
 const InstallApp = () => {
-  const appUrl = "ORBMAQ - Eletric Forklifts & Pallets-https://cozy-landing-forge.lovable.app";
+  const appUrl = "https://7c87b3b2-ff9d-4385-a2bf-5c57a1c6a668.lovableproject.com";
+  const { isInstalled, isInstallable, promptInstall } = usePwaInstall();
 
   return (
     <section id="instalar" className="py-16 bg-muted/50">
@@ -63,7 +67,24 @@ const InstallApp = () => {
               </li>
             </ol>
 
-            <div className="mt-6 flex items-center gap-2 text-sm text-accent font-medium">
+            {/* Mobile install button */}
+            <div className="mt-6 md:hidden">
+              {isInstalled ? (
+                <Button disabled className="w-full gap-2">
+                  <BadgeCheck className="w-4 h-4" />
+                  App já instalado
+                </Button>
+              ) : isInstallable ? (
+                <Button onClick={promptInstall} className="w-full gap-2 bg-gradient-primary">
+                  <Download className="w-4 h-4" />
+                  Instalar agora
+                </Button>
+              ) : (
+                <InstallInstructions variant="button" />
+              )}
+            </div>
+
+            <div className="mt-4 flex items-center justify-center md:justify-start gap-2 text-sm text-accent font-medium">
               <Download className="w-4 h-4" />
               Funciona offline após instalado!
             </div>
