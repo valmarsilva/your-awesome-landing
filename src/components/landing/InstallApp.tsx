@@ -27,13 +27,10 @@ const InstallApp = () => {
         <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
           {/* QR Code */}
           <div className="bg-white p-6 rounded-2xl shadow-card">
-            <QRCodeSVG
-              value={appUrl}
-              size={200}
-              level="H"
-              includeMargin
-              bgColor="#ffffff"
-              fgColor="#000000"
+            <img 
+    src="/qrcode png.png" 
+    alt="QR Code ORBMAQ"
+    className="w-48 h-48 mx-auto"
             />
           </div>
 
